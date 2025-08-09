@@ -23,7 +23,7 @@ const Index = () => {
           <img
             src={HERO_IMAGE}
             alt="Elegant bouquet hero image showcasing blush roses, peonies, and eucalyptus"
-            className="h-[48vh] md:h-[62vh] w-full object-cover"
+            className="h-[80vh] md:h-[90vh] w-full object-cover"
             loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-transparent" />
@@ -33,7 +33,7 @@ const Index = () => {
               <p className="mt-3 text-muted-foreground">Handcrafted arrangements in soft, natural tones—delivered with care.</p>
               <div className="mt-6 flex gap-3">
                 <NavLink to="/shop">
-                  <Button variant="hero">Shop Bouquets</Button>
+                  <Button variant="hero">Shop All Bouquets</Button>
                 </NavLink>
                 <NavLink to="/subscriptions">
                   <Button variant="outline">Subscriptions</Button>

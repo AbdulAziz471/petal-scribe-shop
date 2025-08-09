@@ -21,6 +21,7 @@ export default function Header() {
           <NavLink to="/shop" className={navCls} end>Shop</NavLink>
           <NavLink to="/subscriptions" className={navCls} end>Subscriptions</NavLink>
           <NavLink to="/about" className={navCls} end>About</NavLink>
+          <NavLink to="/contact" className={navCls} end>Contact</NavLink>
         </nav>
 
         <div className="flex items-center gap-3">
