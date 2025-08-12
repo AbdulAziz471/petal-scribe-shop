@@ -1,15 +1,15 @@
 import SEO from "@/components/SEO";
-import ProductGallery from "@/components/ProductGallery";
+import EnhancedProductGallery from "@/components/EnhancedProductGallery";
 
 export default function Shop() {
   return (
     <main>
       <SEO
         title="Shop Bouquets — Blossom & Bloom"
-        description="Explore all elegant, handcrafted bouquets in serene, natural palettes."
+        description="Explore all elegant, handcrafted bouquets in serene, natural palettes. Filter by category, color, and price."
         canonicalPath="/shop"
       />
-      <ProductGallery />
+      <EnhancedProductGallery />
     </main>
   );
 }

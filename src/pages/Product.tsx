@@ -5,11 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "@/hooks/use-toast";
+import ImageZoom from "@/components/ImageZoom";
+import ProductCard from "@/components/ProductCard";
 
 export default function ProductPage() {
   const { slug } = useParams();
   const product = products.find((p) => p.slug === slug);
   const { add } = useCart();
+
+  // Get related products (same tags or similar)
+  const relatedProducts = product 
+    ? products
+        .filter(p => p.id !== product.id)
+        .filter(p => p.tags.some(tag => product.tags.includes(tag)))
+        .slice(0, 4)
+    : [];
 
   if (!product) {
     return (
@@ -33,9 +43,9 @@ export default function ProductPage() {
         canonicalPath={`/product/${product.slug}`}
       />
 
-      <section className="container mx-auto py-10 grid gap-8 md:grid-cols-2">
+      <section className="container mx-auto py-10 grid gap-8 lg:grid-cols-2">
         <div>
-          <img
+          <ImageZoom
             src={product.image}
             alt={`${product.name} bouquet large product photo`}
             className="w-full rounded-md object-cover"
@@ -79,6 +89,21 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Products */}
+      {relatedProducts.length > 0 && (
+        <section className="container mx-auto py-16">
+          <div className="mb-8">
+            <h2 className="font-serif text-2xl mb-2">You might also like</h2>
+            <p className="text-muted-foreground">Similar bouquets handpicked for you</p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {relatedProducts.map((relatedProduct) => (
+              <ProductCard key={relatedProduct.id} product={relatedProduct} />
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }
