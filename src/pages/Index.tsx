@@ -4,17 +4,12 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
 import HeroSlider from "@/components/HeroSlider";
+import TestimonialsSlider from "@/components/TestimonialsSlider";
 import { NavLink } from "react-router-dom";
 import { HERO_IMAGE, products } from "@/data/products";
 
 const Index = () => {
   const bestSellers = products.slice(0, 4);
-  const testimonials = [
-    { quote: "Absolutely stunning and long-lasting.", name: "Sofia M." },
-    { quote: "The calm palette is perfect for our home.", name: "Daniel K." },
-    { quote: "Exceptional quality and thoughtful design.", name: "Ava R." },
-    { quote: "Reliable delivery and gorgeous blooms.", name: "Lucas T." },
-  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -76,20 +71,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="container mx-auto py-12">
-          <header className="mb-6">
-            <h2 className="font-serif text-2xl">What Customers Say</h2>
-            <p className="text-muted-foreground">Kind words from our community</p>
-          </header>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {testimonials.map((t, i) => (
-              <article key={i} className="rounded-lg border bg-card/60 p-5">
-                <p className="italic">“{t.quote}”</p>
-                <p className="mt-3 text-sm text-muted-foreground">— {t.name}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+        <TestimonialsSlider />
 
         <section className="container mx-auto py-12">
           <header className="mb-6 flex items-end justify-between">
