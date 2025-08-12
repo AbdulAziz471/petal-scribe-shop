@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
+import HeroSlider from "@/components/HeroSlider";
 import { NavLink } from "react-router-dom";
 import { HERO_IMAGE, products } from "@/data/products";
 
@@ -24,29 +25,8 @@ const Index = () => {
       />
 
       <main className="flex-1">
-        <section className="relative">
-          <img
-            src={HERO_IMAGE}
-            alt="Elegant bouquet hero image showcasing blush roses, peonies, and eucalyptus"
-            className="h-screen w-full object-cover"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-transparent" />
-          <div className="container mx-auto absolute inset-0 flex items-end pb-10">
-            <div className="max-w-xl animate-enter">
-              <h1 className="font-serif text-4xl md:text-5xl leading-tight">Calm, Elegant Bouquets for Every Moment</h1>
-              <p className="mt-3 text-muted-foreground">Handcrafted arrangements in soft, natural tones—delivered with care.</p>
-              <div className="mt-6 flex gap-3">
-                <NavLink to="/shop">
-                  <Button variant="hero">Shop All Bouquets</Button>
-                </NavLink>
-                <NavLink to="/subscriptions">
-                  <Button variant="outline">Subscriptions</Button>
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Hero Slider Section */}
+        <HeroSlider />
 
         <section className="container mx-auto py-12">
           <header className="mb-6 flex items-end justify-between">
