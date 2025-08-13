@@ -93,6 +93,7 @@ export default function CustomizeBouquet() {
       name: bouquetName,
       price: calculateTotal(),
       image: selectedFlowers[0]?.image || "/src/assets/hero-bouquet.jpg",
+      images: selectedFlowers.map(f => f.image).slice(0, 4),
       description: `Custom bouquet with ${selectedFlowers.map(f => `${f.quantity}x ${f.name}`).join(', ')}`,
       tags: ["custom", "bouquet"],
       rating: 5,

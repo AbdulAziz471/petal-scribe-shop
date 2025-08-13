@@ -4,6 +4,7 @@ export type Product = {
   name: string;
   price: number; // in cents
   image: string;
+  images: string[]; // multiple images for gallery
   description: string;
   tags: string[];
   rating: number; // 0-5
@@ -27,6 +28,7 @@ export const products: Product[] = [
     name: "Rose Blush",
     price: 6499,
     image: roseBlush,
+    images: [roseBlush, sageMeadow, peonyDawn, morningMist], // Multiple images for gallery
     description:
       "An elegant bouquet of blush garden roses and white ranunculus with fresh eucalyptus. Perfect for celebrations and everyday beauty.",
     tags: ["roses", "blush", "romantic"],
@@ -39,6 +41,7 @@ export const products: Product[] = [
     name: "Sage Meadow",
     price: 5899,
     image: sageMeadow,
+    images: [sageMeadow, roseBlush, eucalyptusWhisper, blushHarmony],
     description:
       "A calming mix of white tulips and soft blue accents wrapped with sage greenery, evoking fresh spring mornings.",
     tags: ["tulips", "spring", "calm"],
@@ -51,6 +54,7 @@ export const products: Product[] = [
     name: "Peony Dawn",
     price: 7999,
     image: peonyDawn,
+    images: [peonyDawn, blushHarmony, roseBlush, morningMist],
     description:
       "Luxurious pale peach peonies complemented by white roses and airy greens—an irresistible showstopper.",
     tags: ["peonies", "luxury", "peach"],
@@ -63,6 +67,7 @@ export const products: Product[] = [
     name: "Morning Mist",
     price: 6199,
     image: morningMist,
+    images: [morningMist, eucalyptusWhisper, sageMeadow, peonyDawn],
     description:
       "Soft hydrangeas and pale blue blooms with silver dollar eucalyptus—serene and sophisticated.",
     tags: ["hydrangea", "blue", "eucalyptus"],
@@ -75,8 +80,9 @@ export const products: Product[] = [
     name: "Blush Harmony",
     price: 5699,
     image: blushHarmony,
+    images: [blushHarmony, roseBlush, peonyDawn, sageMeadow],
     description:
-      "Blush roses, lisianthus, and baby’s breath in perfect harmony—delicate, airy, and elegant.",
+      "Blush roses, lisianthus, and baby's breath in perfect harmony—delicate, airy, and elegant.",
     tags: ["roses", "lisianthus", "delicate"],
     rating: 4.7,
     reviews: 121,
@@ -87,6 +93,7 @@ export const products: Product[] = [
     name: "Eucalyptus Whisper",
     price: 5299,
     image: eucalyptusWhisper,
+    images: [eucalyptusWhisper, morningMist, sageMeadow, blushHarmony],
     description:
       "A fresh, modern composition of white roses and abundant eucalyptus—crisp, clean, and timeless.",
     tags: ["eucalyptus", "white-roses", "modern"],

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "@/hooks/use-toast";
-import ImageZoom from "@/components/ImageZoom";
+import ProductImageGallery from "@/components/ProductImageGallery";
 import ProductCard from "@/components/ProductCard";
 
 export default function ProductPage() {
@@ -45,10 +45,9 @@ export default function ProductPage() {
 
       <section className="container mx-auto py-10 grid gap-8 lg:grid-cols-2">
         <div>
-          <ImageZoom
-            src={product.image}
-            alt={`${product.name} bouquet large product photo`}
-            className="w-full rounded-md object-cover"
+          <ProductImageGallery
+            images={product.images}
+            productName={product.name}
           />
         </div>
         <div>
