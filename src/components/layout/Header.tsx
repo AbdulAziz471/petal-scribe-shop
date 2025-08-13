@@ -19,6 +19,7 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-1" aria-label="Main Navigation">
           <NavLink to="/shop" className={navCls} end>Shop</NavLink>
+          <NavLink to="/customize" className={navCls} end>Customize</NavLink>
           <NavLink to="/subscriptions" className={navCls} end>Subscriptions</NavLink>
           <NavLink to="/about" className={navCls} end>About</NavLink>
           <NavLink to="/contact" className={navCls} end>Contact</NavLink>
